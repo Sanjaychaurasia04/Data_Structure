@@ -2,6 +2,7 @@
 #include<vector>
 #include<climits>
 using namespace std;
+//KADANS ALGORITHM
 
 void maxiSubarray(vector<int>nums){
     int maxi = INT_MIN;
