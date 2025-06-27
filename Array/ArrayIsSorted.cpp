@@ -27,12 +27,47 @@ bool isSorted(vector<int>nums){
     return true;
 }
 
+//optimal approach
+
+/*
+
+Complexity Analysis
+
+Time Complexity: O(N)
+
+Space Complexity: O(1)
+
+*/
+bool isSortedArray(vector<int>nums){
+    
+    for(int i =1;i<nums.size();i++){
+        if(nums[i]<nums[i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+bool sortedRotatedArray(vector<int>nums){
+    int count =0;
+    for(int  i=1;i<nums.size();i++){
+        if(nums[i]<nums[i-1]){
+            count++;
+        }
+    }
+    if(nums[nums.size()-1] >nums[0]) count++;
+
+    return count<=1;
+}
+
 int main(){
     vector<int>arr {1,4,5,6,7};
     vector<int>arr2 {5,4,6,7,8};
+    vector<int>arr3 {3,4,5,1,2};
     bool ans = IsSorted(arr2);
-    cout<<"Array is Sorted :"<<isSorted(arr)<<endl;
-    cout<<ans;
+    cout<<"Array is Sorted :"<<isSortedArray(arr)<<endl;
+    cout<<ans<<endl;
+    cout<<"sortedRotatedArray : "<<sortedRotatedArray(arr3);
 
     return 0;
 }
