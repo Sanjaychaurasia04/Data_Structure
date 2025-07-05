@@ -56,6 +56,34 @@ void inorderTraversal(Node* root){
     cout<<root->data<<"   ";
     inorderTraversal(root->right);
 }
+
+void LevelorderTraversal(Node* root){
+    queue<Node*>q;
+    q.push(root);
+
+    while(!q.empty()){
+        Node* newnode = q.front();
+        q.pop();
+
+
+        if(newnode ==NULL){
+            cout<<endl;
+            if(!q.empty()){
+                q.push(NULL);
+            }
+        }
+        else{
+            cout<<newnode->data<<"  ";
+            if(newnode->left != NULL){
+                q.push(newnode->left);
+
+            }
+            if(newnode->right != NULL){
+                q.push(newnode->right);
+            }
+        }
+    }
+}
 int main(){
     Node* root  = tree();
     cout<<"Preoder Traveral :  ";
@@ -66,6 +94,10 @@ int main(){
 
     cout<<endl<<"Inorder traversal :";
     inorderTraversal(root);
+
+    cout<<endl<<"Level order Traversal : ";
+    LevelorderTraversal(root);
+
 
     return 0;
 }
