@@ -37,10 +37,10 @@ Node* merge(Node* list1 , Node* list2) {
         temp2->next = second;
     }
 
-    return temp->next;  // Return the merged list (excluding dummy)
+    return temp->next;  // Return the merged list 
 }
 
-// Helper function to create linked list from array
+//function to create linked list from array
 Node* createList(int arr[], int size) {
     if (size == 0) return NULL;
     Node* head = new Node(arr[0]);
@@ -52,7 +52,7 @@ Node* createList(int arr[], int size) {
     return head;
 }
 
-// Helper function to print linked list
+
 void printList(Node* head) {
     while(head != NULL) {
         cout << head->data;
