@@ -18,7 +18,7 @@ Explanation: There is no common prefix among the input strings.
 */
 
 string largest_prefix(vector<string>& s){
-    string result  = " ";
+    string result  = "";
 
     for(int  i=0;i < s[0].length();i++){
         for(int j = 1;j<s.size();j++){
