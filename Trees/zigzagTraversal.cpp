@@ -51,7 +51,20 @@ vector<vector<int>> zigzagTraversal(Node* root){
     return ans;
 }
 
+// Example binary tree:
+    //        1
+    //       / \
+    //      2   3
+    //     / \   \
+    //    4   5   6
 
+    /*
+    output
+1->
+3->2->
+4->5->6->
+
+    */
 int main(){
     Node* root = new Node(1);
     root->left = new Node(2);
