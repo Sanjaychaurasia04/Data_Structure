@@ -23,21 +23,31 @@ int depth(Node* root){
     return ans;
 }
 bool isBalanced(Node* root) {
-    if(root == NULL) return true;
-    int leftans = depth(root->left);
-    int rightans = depth(root->right);
-    int ans = abs(leftans - rightans);
-    bool diff  = ans<=1;
-    bool lefta = isBalanced(root->left);
-    bool righta = isBalanced(root->right);
-    if(lefta && righta && ans <=1){
+    if(root == NULL ) return true;
+
+    int leftdepth = depth(root->left);
+    int rightdepth = depth(root->right);
+
+    int ans = abs(leftdepth - rightdepth);
+
+    bool leftans = isBalanced(root->left);
+    bool rightans = isBalanced(root->right);
+
+    if(ans <= 1 && leftans && rightans ){
         return true;
     }
-    else return false;
+    else{
+        return false;
+    }
     
 }
 
-
+//  Binary Tree:
+    //         1
+    //        /   \
+    //       2     3
+    //      / \    /  \
+    //     4   5   6   7
 
 int main(){
 
@@ -46,6 +56,9 @@ int main(){
     root->right = new Node(3);
     root->left->left = new Node(4);
     root->left->right = new Node(5);
+    root->right->left = new Node(6);
+    root->right->right = new Node(7);
+
     bool ans = isBalanced(root);
     cout<<ans;
 
