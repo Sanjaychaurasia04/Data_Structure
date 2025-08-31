@@ -19,11 +19,7 @@ vector<int> dfs(int start, vector<vector<int>> &adj, int v, vector<int> &visited
 
 int main()
 {
-    vector<vector<int>> adj = {{1, 2},
-                               {0},
-                               {0, 3, 4},
-                               {2},
-                               {2}};
+    vector<vector<int>> adj = {{1, 2},{0},{0, 3, 4},{2},{2}};
     int v = adj.size();
     vector<int> visited(v, 0);
     vector<int> ans;
